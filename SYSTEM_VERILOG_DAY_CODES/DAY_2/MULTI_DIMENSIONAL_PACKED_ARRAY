@@ -1,0 +1,14 @@
+// Code your design here
+module multidimensional_packed_array;
+  bit [3:0][7:0]mul_data;
+  int i;
+  
+  initial begin
+    mul_data=32'hface_cafe;
+    $display("mul_data=0x%0h",mul_data);
+    for(i=0;i<$bits(mul_data);i++)begin
+      $display("mul_data[%0d]=%b (0x%0h)",i,mul_data[i],mul_data[i]);
+    end
+  end
+endmodule
+    
