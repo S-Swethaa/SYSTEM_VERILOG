@@ -1,0 +1,14 @@
+// Code your design here
+module a;
+  bit [7:0] str_data;
+  int i;
+
+  initial begin
+    str_data = 8'hAA; // 10101010
+    for (i = 0; i < $bits(str_data); i++) begin
+      $display("str_data[%0d] = %b", i, str_data[i]);
+    end
+  end
+
+endmodule
+      
