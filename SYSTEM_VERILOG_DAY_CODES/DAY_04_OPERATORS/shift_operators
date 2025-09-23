@@ -1,0 +1,26 @@
+// Code your design here
+module shift_operators;
+  logic [15:0]a;
+  int y;
+  initial begin
+    
+    a='habab;
+    y=(a<<2);
+    $display("y=%b",y,a);
+    y=(a>>2);
+    $display("y=%b",y,a);
+    y=(a<<4);
+    $display("y=%b",y,a);
+    y=(a>>4);
+    $display("y=%b",y,a);
+   
+    y=(a<<<2);
+    $display("y=%b",y,a);
+    y=(a>>>2);
+    $display("y=%b",y,a);
+    y=(a<<<4);
+    $display("y=%b",y,a);
+    y=(a>>>4);
+    $display("y=%b",y,a);
+  end
+endmodule
