@@ -1,0 +1,20 @@
+// Code your design here
+module logical_operators;
+  logic [15:0]a,b;
+  int y;
+  
+  initial begin
+    a=5;
+    b=200;
+    y=a->b;
+    $display("y",y,a,b);
+    y=a<->b;
+        $display("y",y,a,b);
+    y=a>-b;
+        $display("y",y,a,b);
+    y=a<-b;
+        $display("y",y,a,b);
+  end
+endmodule
+
+
