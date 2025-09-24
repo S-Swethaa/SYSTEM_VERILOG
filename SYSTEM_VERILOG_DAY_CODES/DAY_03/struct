@@ -11,9 +11,9 @@ module struct_packed;
     sua.intr = 'hFF;
     sua.addr = 'hABCDEF;
 
-    $display("%0t sua = %h", $time, sua);         // Display full struct as hex
-    $display("%0t sua.intr = %h", $time, sua.intr); // Display intr field
-    $display("%0t sua.addr = %h", $time, sua.addr); // Display addr field
+    $display("%0t sua = %h", $time, sua);         
+    $display("%0t sua.intr = %h", $time, sua.intr); 
+    $display("%0t sua.addr = %h", $time, sua.addr); 
   end
 
 endmodule
