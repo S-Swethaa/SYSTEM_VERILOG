@@ -1,0 +1,16 @@
+module packed_array_score;
+  int [7:0] a;
+  logic [3:0][7:0] b;
+
+  initial begin
+    a = 8'b10101010;
+    b[0] = 8'h10;
+    b[1] = 8'h11;
+    b[2] = 8'h12;
+    b[3] = 8'h15;
+
+    $display("a = %b", a);
+    foreach(b[i])
+      $display("b[%0d] = %h", i, b[i]);
+  end
+endmodule
