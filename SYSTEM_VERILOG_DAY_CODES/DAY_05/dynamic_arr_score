@@ -1,0 +1,26 @@
+// Code your design here
+module dynamic_arr_score;
+  int score[];
+  
+  initial begin
+    score=new[3];
+    score[0]=20;
+    score[1]=30;
+    score[2]=50;
+    foreach(score[i])
+    $display("score[%0d] = %0d", i, score[i]);
+    
+    score=new[5](score);
+    $display("size: %0d", score.size());
+    score[3] = 70;
+    score[4] = 90;
+    foreach(score[i])
+      $display("score[%0d] = %0d", i, score[i]);
+    score.delete();
+      $display("size: %0d", score.size());
+  end 
+endmodule
+
+    
+    
+    
