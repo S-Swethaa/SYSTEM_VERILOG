@@ -1,0 +1,13 @@
+module associative_arr_score;
+  int marks[0:2]; 
+
+  initial begin
+    marks[0] = 85;
+    marks[1] = 90;
+    marks[2] = 100;
+    $display("Student 0: %0d", marks[0]);
+    $display("Student 1: %0d", marks[1]);
+    $display("Student 2: %0d", marks[2]);
+
+  end
+endmodule
