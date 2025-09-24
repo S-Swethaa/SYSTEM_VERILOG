@@ -1,0 +1,20 @@
+// Code your design here
+module unpacked_array_score;
+  bit [7:0]mem[3:0];
+  
+  initial begin
+    mem[0]=8'h10;
+    mem[1]=8'h11;
+    mem[2]=8'h12;
+    mem[3]=8'h13;
+    mem[4]=8'h15;
+    mem[6]=8'h10;
+    foreach(mem[i])
+      $display("mem[%0d]= %0d",i,mem[i]);
+  end
+endmodule
+
+
+
+    
+
