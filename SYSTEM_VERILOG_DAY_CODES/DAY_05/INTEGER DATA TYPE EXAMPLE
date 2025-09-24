@@ -1,0 +1,30 @@
+// Code your design here
+module integer_data_type();
+ integer a; 
+ int b; 
+ shortint c; 
+ longint d; 
+ logic [7:0] A1; 
+ logic signed [7:0] sl1; 
+ byte bl1; 
+ reg [7:0] r1;
+ initial
+ begin
+ 
+   a = 'h xxzzffff; 
+ b = -1; 
+ c = 'h fxfx; 
+ d = 'h ffffxxxxffffzzzz;
+
+   A1 = -1 ; 
+ sl1 = -1; 
+ bl1 = -1;
+ r1 = 8'b xzxz0101; 
+ end
+initial begin
+  #5;
+ $display("a = %h b = %h c = %h d = %h", a, b, c, d);
+ $display("A1 = %0d sl1=%0d bl1 = %0d r1 = %b",A1,sl1,bl1,r1);
+ #10 $finish(2);
+ end
+ endmodule
