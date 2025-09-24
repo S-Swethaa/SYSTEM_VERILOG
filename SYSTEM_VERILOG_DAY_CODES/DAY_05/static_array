@@ -1,0 +1,14 @@
+// Code your design here
+module pack_arr_score;
+  int score[4];
+  initial begin
+    score[0]=20;
+    score[1]=30;
+    score[2]=40;
+    score[3]=50;
+    
+    foreach(score[i])
+     $display("score[%0d] = %0d", i, score[i]);
+
+  end
+endmodule
