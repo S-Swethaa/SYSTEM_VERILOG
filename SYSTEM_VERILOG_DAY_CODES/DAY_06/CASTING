@@ -1,0 +1,55 @@
+// Code your design here
+module casting;
+  int a;
+  real b;
+  logic [7:0]c;
+  logic signed [3:0]d;
+  
+  initial begin
+    //display real and int
+    b=(3.12*2.56);
+    $display("\n display unsigned casting");
+    a=int'(b);
+    $display("real value is %f", b);
+    $display("int value is %0d",a);
+    //display real and int in signed
+    a=-10;
+    $display("\n signed casting ");
+    b=signed'(a);
+    $display("real value is %f", b);
+    $display("int value is %0d",a);
+    //display unsigned real and int
+      a=-10;
+    $display("\n unsigned casting ");
+    b=unsigned'(a);
+    $display("real value is %f", b);
+    $display("int value is %0d",a);
+    //print the unsigned real and logic
+    c=8'b011x;
+    $display("\n unsigned logic casting ");
+    b=unsigned'(c);
+    $display("real value is %f", b);
+    $display("logic value is %0d",a); 
+    // print the real and logic in signed
+    c=8'b011x;
+    $display("\n signed logic casting ");
+    b=signed'(c);
+    $display("real value is %f", b);
+    $display("logic value is %0d",a); 
+    
+    //logic to real display
+    d=-3;
+    $display("\n signed logic casting ");
+    b=signed'(d);
+    $display("real value is %f", b);
+    $display("signed logic value is %0d",d); 
+    
+    d=-3;
+    $display("\n unsigned logic casting ");
+    b=unsigned'(d);
+    $display("real value is %f", b);
+    $display("signed logic value is %0d",d); 
+    
+    
+  end
+endmodule
