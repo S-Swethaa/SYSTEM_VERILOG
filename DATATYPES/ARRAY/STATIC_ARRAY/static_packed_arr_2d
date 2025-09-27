@@ -1,0 +1,13 @@
+module static_packed_arr_2d;
+bit [2:0][1:0]arr;
+
+initial begin
+arr=$urandom;
+
+foreach(arr[i])begin
+foreach(arr[j])begin
+$display("static 2d packed array [%0d][%0d]=%b%b",i,j,arr[i],arr[j]);
+end
+end
+end
+endmodule
