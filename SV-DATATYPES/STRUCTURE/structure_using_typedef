@@ -1,0 +1,31 @@
+module structure_using_typedef;
+typedef struct {
+string name;
+bit[6:0] marks;
+integer id;
+}stu_detail;
+
+initial begin
+stu_detail st1,st2;
+st1.name="swetha";
+st1.marks='d50;
+st1.id='d1234;
+$display("st1:%p",st1);
+$display("detail: name=%s,marks=%0d,id=%0d",st1.name,st1.marks,st1.id);
+
+st2.name="varsha";
+st2.marks='d55;
+st2.id='d4321;
+$display("st2:%p",st2);
+$display("detail st2: name=%s,marks=%0d,id=%0d",st2.name,st2.marks,st2.id);
+end
+endmodule
+
+output
+run
+# st1:'{name:"swetha", marks:50, id:1234}
+# detail: name=swetha,marks=50,id=1234
+# st2:'{name:"varsha", marks:55, id:4321}
+# detail st2: name=varsha,marks=55,id=4321
+
+
