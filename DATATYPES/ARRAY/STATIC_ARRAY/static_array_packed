@@ -1,9 +1,0 @@
-module static_array_packed;
-int sta_arr[8]='{9,3,5,6,3,2,7,1};
-
-initial begin
-foreach (sta_arr[i])begin
-$display("sta_arr[%0d]=%d",i,sta_arr[i]);
-end
-end
-endmodule
