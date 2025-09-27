@@ -1,0 +1,19 @@
+module structure;
+struct {
+string name;
+bit[6:0] marks;
+integer id;
+}stu_detail;
+
+initial begin
+stu_detail.name="swetha";
+stu_detail.marks='d50;
+stu_detail.id='d1234;
+$display("stu_detail:%p",stu_detail);
+$display("detail: name=%s,marks=%0d,id=%0d",stu_detail.name,stu_detail.marks,stu_detail.id);
+end
+endmodule
+
+output
+stu_detail:'{name:"swetha", marks:50, id:1234}
+# detail: name=swetha,marks=50,id=1234
