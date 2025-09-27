@@ -1,0 +1,20 @@
+module unique_if_stmt;
+  //unique using normal stmt
+  int a;
+  int b;
+  
+  initial begin
+    a=20;
+    b=30;
+    unique if (a > b)
+    $display("a is greater than b");
+    else if (a < b)
+      $display("b is greater than a");
+    else
+      $display("a is equal to b");
+  end
+
+endmodule
+
+output
+# b is greater than a
