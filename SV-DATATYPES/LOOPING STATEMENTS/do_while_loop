@@ -1,0 +1,21 @@
+module do_while_loop;
+int a;
+
+initial begin
+do begin
+$display("value of a:%0d",a);
+a++;
+a=a**a;
+end
+
+while(a<50);
+end
+endmodule
+ a = 0,display: prints value of a:0,a++: now a = 1,a = a ** a: now a = 1 ** 1 = 1;
+ a = 1,display: prints value of a:1,a++: now a = 2,a = a ** a: now a = 2 ** 2 = 4;
+  a = 4,display: prints value of a:4,a++: now a = 5,a = a ** a: now a = 5 ** 5= 25;
+
+(second a=1,iteration a update 2,a=2*2-  o/p=1)
+# value of a:0 
+# value of a:1  
+# value of a:4
