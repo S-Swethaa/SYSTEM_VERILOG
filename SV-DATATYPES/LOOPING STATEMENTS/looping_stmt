@@ -1,0 +1,23 @@
+module looping_stmt();
+int a;
+initial begin
+integer i;
+a = 10;
+for (i = 0; i < a; i++) begin
+$display("display the looping values: a = %0d, i = %0d", a, i);
+end
+end
+endmodule
+
+output 
+# display the looping values: a = 10, i = 0
+# display the looping values: a = 10, i = 1
+# display the looping values: a = 10, i = 2
+# display the looping values: a = 10, i = 3
+# display the looping values: a = 10, i = 4
+# display the looping values: a = 10, i = 5
+# display the looping values: a = 10, i = 6
+# display the looping values: a = 10, i = 7
+# display the looping values: a = 10, i = 8
+# display the looping values: a = 10, i = 9
+
