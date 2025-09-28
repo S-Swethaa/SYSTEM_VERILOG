@@ -1,0 +1,18 @@
+module forever_loop;
+int a;
+
+initial begin
+forever begin
+$display("value of a: %0d", a);
+a++;
+a=a**a;
+if(a>50)
+break;
+end
+end
+endmodule
+endmodule
+
+# value of a:0 
+# value of a:1  
+# value of a:4
