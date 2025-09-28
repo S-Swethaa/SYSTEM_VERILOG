@@ -1,0 +1,23 @@
+module while_loop;
+int a;
+
+initial begin
+while(a<10)begin
+a++;
+$display("the values are a=%0d",a);
+end
+end
+endmodule
+
+output
+the values are a=1
+# the values are a=2
+# the values are a=3
+# the values are a=4
+# the values are a=5
+# the values are a=6
+# the values are a=7
+# the values are a=8
+# the values are a=9
+# the values are a=10
+
