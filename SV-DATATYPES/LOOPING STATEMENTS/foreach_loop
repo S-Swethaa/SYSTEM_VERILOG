@@ -1,0 +1,16 @@
+module foreach_loop;
+int dyn_arr[];
+
+initial begin
+dyn_arr=new[5];
+foreach(dyn_arr[i])
+dyn_arr[i] = i * i;
+foreach(dyn_arr[i])
+$display("da[%0d] = %0d", i, dyn_arr[i]);
+end
+endmodule
+# da[0] = 0
+# da[1] = 1
+# da[2] = 4
+# da[3] = 9
+# da[4] = 16
