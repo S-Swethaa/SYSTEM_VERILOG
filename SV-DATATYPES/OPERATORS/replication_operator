@@ -1,0 +1,26 @@
+module replication_operator;
+logic [31:0]a,b;
+logic enb;
+string s;
+logic [127:0] i;
+
+initial begin
+a=10;
+b=8;
+i={3{a}};
+$display("a=%h,i=%h",a,i); 
+i={4{b}};
+$display("b=%h,i=%h",b,i);
+i={{4{1'b0}},{3{b}}};
+$display("a=%h,b=%h,i=%h",a,b,i);
+enb=1;
+i={4{enb}};
+$display("enb=%b,i=%h",enb,i);
+end
+endmodule
+
+output:
+# a=0000000a,i=000000000000000a0000000a0000000a
+# b=00000008,i=00000008000000080000000800000008
+# a=0000000a,b=00000008,i=00000000000000080000000800000008//{4{1'b0}} 2(4)times 0 replicate,3 times of b replicate.
+# enb=1,i=0000000000000000000000000000000f
