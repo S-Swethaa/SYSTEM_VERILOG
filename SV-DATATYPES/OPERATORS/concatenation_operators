@@ -1,0 +1,24 @@
+module concatenation_operators;
+string s1="welcome";
+string s2="to";
+string s3="swethasankar";
+string x,y,z,i;
+
+initial begin
+x="hi";
+y="hello";
+z={s1,s2,s3};
+$display("s1=%s,s2=%s,s3=%s,z=%s",s1,s2,s3,z);
+$display("\n");
+i={x,y,z};
+$display("x=%s,y=%s,z=%s,i=%s",x,y,z,i);
+end
+endmodule
+
+
+OUTPUT:
+run
+# s1=welcome,s2=to,s3=swethasankar,z=welcometoswethasankar
+# 
+# 
+# x=hi,y=hello,z=welcometoswethasankar,i=hihellowelcometoswethasankar
