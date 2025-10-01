@@ -1,0 +1,34 @@
+module unary_reduction_operator;
+logic [7:0]a;
+logic b;
+
+initial begin
+a=8'b10110111;
+$display("a=%b",a);
+
+
+b=&a;
+$display("a=%b,b=%b",a,b);
+b=~&a;
+$display("a=%b,b=%b",a,b);
+b=|a;
+$display("a=%b,b=%b",a,b);
+b=~|a;
+$display("a=%b,b=%b",a,b);
+b=^a;
+$display("a=%b,b=%b",a,b);
+b=~^a;
+$display("a=%b,b=%b",a,b);
+
+end
+endmodule
+
+output:
+# a=10110111
+# 
+# a=10110111,b=0
+# a=10110111,b=1
+# a=10110111,b=1
+# a=10110111,b=0
+# a=10110111,b=0
+# a=10110111,b=1
