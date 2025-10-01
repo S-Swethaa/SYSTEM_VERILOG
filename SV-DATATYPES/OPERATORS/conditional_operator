@@ -1,0 +1,48 @@
+module conditional_operator;
+int a,b,i;
+logic enb;
+logic [7:0]c;
+
+initial begin
+a=8;
+b=10;
+i=a&&b;
+$display("a=%d,b=%d,i=%b",a,b,i);//both non-zero → true → i = 1
+i=a||b;
+$display("a=%d,b=%d,i=%b",a,b,i);//at least one non-zero → true → i = 1
+
+enb=1'b0;
+c=enb?'hff:'z;
+$display("enb=%b,c=%0d",enb,c);
+
+enb=1'b1;
+c=enb?'hff:'z;
+$display("enb=%b,c=%0d",enb,c);
+
+enb=1'bx;
+c=enb?'hff:'z;
+$display("enb=%b,c=%0d",enb,c);
+
+enb=1'bx;
+c=enb?'hff:'hff;
+$display("enb=%b,c=%0d",enb,c);
+
+enb=1'bx;
+c=enb?'hff:'h00;
+$display("enb=%b,c=%0d",enb,c);
+
+end
+endmodule
+
+OUTPUT:
+run
+# a=8,b=10,i=00000000000000000000000000000001   //1
+# a=8,b=10,i=00000000000000000000000000000001   //1
+# enb=0,c=z
+# enb=1,c=255
+# enb=x,c=x
+# enb=x,c=255
+# enb=x,c=x
+
+
+
