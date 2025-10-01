@@ -1,0 +1,36 @@
+module bitwise_operator;
+logic [31:0]a,b;
+int i;
+
+initial begin
+a='h000011ff;
+b='h111100ff;
+i=a&b;
+$display("a=%h,b=%h,i=%h",a,b,i);
+i=a|b;
+$display("a=%h,b=%h,i=%h",a,b,i);
+i=a^b;
+$display("a=%h,b=%h,i=%h",a,b,i);
+i=~(a^b);
+$display("a=%h,b=%h,i=%h",a,b,i);
+i=a~^b;
+$display("a=%h,b=%h,i=%h",a,b,i);
+i=a^~b;
+$display("a=%h,b=%h,i=%h",a,b,i);
+i=~a;
+$display("a=%h,i=%h",a,i);
+i=~b;
+$display("b=%h,i=%h",b,i);
+end
+endmodule
+
+output:
+run
+# a=000011ff,b=111100ff,i=000000ff
+# a=000011ff,b=111100ff,i=111111ff
+# a=000011ff,b=111100ff,i=11111100
+# a=000011ff,b=111100ff,i=eeeeeeff
+# a=000011ff,b=111100ff,i=eeeeeeff
+# a=000011ff,b=111100ff,i=eeeeeeff
+# a=000011ff,i=ffffee00
+# b=111100ff,i=eeeeff00
