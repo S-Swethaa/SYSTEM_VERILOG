@@ -1,0 +1,24 @@
+module shift_operators; 
+logic signed[7:0]a,b;//logic signed is using for arithmetic right shift instead use logic only output get wrong to give unsigned 63
+
+initial begin
+a=8'b 10110111;
+b=a<<2; 
+$display("b=%b:<<2=%b",a,b);//left
+b=a>>2; 
+$display("b=%b:>>2=%b",a,b);//right shift
+a=-3;
+b=a<<<2;
+$display("a=%b:<<<2=%b",a,b);//arithmetic left
+a=-2;
+b=a>>>2;
+$display("a=%b:>>>2=%b",a,b);//arithmetic right shift
+end
+endmodule
+
+output:
+run
+# b=10110111:<<2=11011100  //left shift
+# b=10110111:>>2=00101101  //right shift
+# a=11111101:<<<2=11110100 //arithmetic left
+# a=11111110:>>>2=11111111 //arithmetic right
