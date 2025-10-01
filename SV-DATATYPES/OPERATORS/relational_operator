@@ -1,0 +1,50 @@
+module relational_operator;
+int a,b;
+
+initial begin
+
+a=1'bx;b=2;
+$display("a>b=%0d",a>b);
+$display("a<b=%0d",a<b);
+$display("a>=b=%0d",a>=b);
+$display("a<=b=%0d",a<=b);
+$display("a=%0d,b=%0d",a,b);
+
+$display("/n");
+
+a=$urandom;
+b=$urandom;
+$display("a>b=%0d",a>b);
+$display("a<b=%0d",a<b);
+$display("a<=b=%0d",a>=b);
+$display("a<=b=%0d",a<=b);
+$display("a=%0d,b=%0d",a,b);
+
+$display("/n");
+a=2;b=3;
+$display("a<b-1=%0d",a<b-1);
+$display("a<(b-1)=%0d",a<(b-1));
+
+$display("b-(1<a)=%0d",b-(1<a));
+$display("b-1<a=%0d",b-1<a);
+
+//$display("3 > 2 = boolean %0d", a > b);
+end
+endmodule
+
+a>b=0
+# a<b=1
+# a>=b=0
+# a<=b=1
+# a=0,b=2
+# /n
+# a>b=1
+# a<b=0
+# a<=b=1
+# a<=b=0
+# a=-834229725,b=-1608815054
+# /n
+# a<b-1=0
+# a<(b-1)=0
+# b-(1<a)=2
+# b-1<a=0
