@@ -1,0 +1,25 @@
+module unpacked_union;
+typedef union {
+int a;
+byte b;
+shortreal c;  //32bit
+}unpacked_uni;
+
+initial begin
+unpacked_uni s;
+s.a=32'h1234ff;
+$display("a=%0h",s.a);
+s.b=8'hff;
+$display("b=%0h",s.b);
+s.c=32.5;
+$display("the shortreal value is=%0f",s.c);
+$display("a=%0h",s.a);   //read a
+end
+endmodule
+
+o/p:
+run
+# a=1234ff
+# b=ff
+# the shortreal value is=32.500000
+# a=0  //o/p 0 becoz didnt directly assign shortreal to integer
