@@ -1,0 +1,47 @@
+
+typedef union packed{ //packed union
+logic [31:0]word;
+struct packed{
+logic [15:0]lhalf;
+logic [15:0]uhalf;
+}half;
+}packed_union;
+
+typedef union{ //unpacked union
+int a;
+byte b;
+shortreal c;
+} unpacked_union;
+
+module packed_unpacked_union;
+packed_union pu;
+unpacked_union uu;
+
+initial begin
+pu.word=32'hAABBCCDD;
+$display("word=%h",pu.word);
+$display("half.lhalf=%h",pu.half.lhalf);
+$display("half.uhalf=%h",pu.half.uhalf);
+
+uu.a=32'h1234;
+$display("the int value of a is=%h",uu.a);
+uu.b=8'hf;
+$display("the byte value of b is=%h",uu.b);
+uu.c=32.5;
+$display("the shortreal value of c is=%f",uu.c);
+$display("the int value of a is=%h",uu.a);//read value a
+uu.c=32.7;
+$display("the shortreal value of c is=%f",uu.c);
+
+end
+endmodule
+
+o/p:
+word=aabbccdd
+# half.lhalf=aabb
+# half.uhalf=ccdd
+# the int value of a is=00001234
+# the byte value of b is=0f
+# the shortreal value of c is=32.500000
+# the int value of a is=00000000
+# the shortreal value of c is=32.700000
