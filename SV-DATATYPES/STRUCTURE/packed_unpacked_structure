@@ -1,0 +1,38 @@
+module packed_unpacked_structure;
+typedef struct packed{              //packed struct
+logic [6:0]math;
+logic[6:0]science;
+logic [6:0]social;
+}marks;
+
+typedef struct{   //unpacked
+string name;
+int roll_no;
+marks score; //packedd inside unpacked
+}stu_detail;
+
+stu_detail s;
+initial begin
+s.name="swetha";
+s.roll_no=74;
+s.score.math=75;
+s.score.science=85;
+s.score.social=80;
+$display("name=%s",s.name);
+$display("roll number=%0d",s.roll_no);
+$display("math Score: %0d",s.score.math);
+$display("science Score:%0d",s.score.science);
+$display("social Score:%0d",s.score.social);
+end
+endmodule
+
+output:
+run
+# name=swetha
+# roll number=74
+# math Score: 75
+# science Score:85
+# social Score:80
+
+
+
