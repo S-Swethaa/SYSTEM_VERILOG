@@ -1,0 +1,23 @@
+module packed_union;
+typedef union packed{
+logic [31:0]word;  //32 bit
+struct packed{
+logic [7:0] byte1;         
+logic [7:0] byte2;        
+logic [15:0] halfWord;  //16 bit   
+} bytes;
+}packed_union;
+
+initial begin
+packed_union s;
+
+s.word=32'hAABBCCDD;
+$display("word=%h",s.word);
+$display("byte1:%h,byte2:%h,halfWord:%h",s.bytes.byte1,s.bytes.byte2, s.bytes.halfWord);
+end
+endmodule
+
+output:
+run
+# word=aabbccdd
+# byte1:aa,byte2:bb,halfWord:ccdd
