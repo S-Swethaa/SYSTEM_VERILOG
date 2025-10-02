@@ -1,0 +1,17 @@
+module inside_operator;
+string name;
+
+initial begin
+name="swethasankar";
+$display("name=%s",name);
+
+if(name inside{"varsha","swethasankar","devika"})
+$display("name=%s is inside the operator",   name);
+else
+$display("name=%s is  not inside the operator",   name);
+end
+endmodule
+
+output:
+name=swethasankar
+# name=swethasankar is inside the operator
