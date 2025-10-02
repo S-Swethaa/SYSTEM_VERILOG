@@ -1,0 +1,24 @@
+def:shared storage for multiple views
+
+module union_ex;
+ typedef union {
+ int roll_no;
+ int cgpa;
+ }stu_detail;
+
+  stu_detail s;
+  initial begin
+  s.roll_no = 80;
+  $display("Roll No = %0d", s.roll_no);
+
+   s.cgpa = 9;
+   $display("CGPA=%0d", s.cgpa);
+   $display("Roll No after CGPA assign = %0d", s.roll_no); //roll_no is overwritten
+end
+endmodule
+
+output:
+run
+# Roll No = 80
+# CGPA=9
+# Roll No after CGPA assignment = 9     //shared same memory
