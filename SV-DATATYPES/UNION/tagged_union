@@ -1,0 +1,24 @@
+typedef union tagged{
+int a;
+byte b;
+bit [15:0]c;
+}data;
+
+module tagged_union;
+data d;
+logic [31:0]x;
+
+initial begin
+d=tagged a 32'hffff_ffff;  //write a
+x=d.b;  //runtime error bcoz b is accessed now
+d=tagged b 8'h10;  //write b
+x=d.b;  //read b
+$display("x=%h",x);
+end
+endmodule
+
+output:
+run
+# ** Error (suppressible): (vsim-8011) Union is tagged 'a', but is referenced as 'b'.
+#    Time: 0 ns  Iteration: 0  Process: /tagged_union/#INITIAL#11 File: C:/Users/praka/AppData/Local/quartus/tagged_union.sv Line: 13
+# x=00000010
