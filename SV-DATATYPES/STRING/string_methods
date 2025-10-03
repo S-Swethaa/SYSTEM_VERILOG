@@ -1,0 +1,47 @@
+  module string_methods;
+  string s1 = "SwethaSankar";
+  string s2 = "swelcome to design $ verification engineer";
+  string s3;
+  string s4 = "ULSI";
+  string s5 = "12ABC645";
+  string s6 = "ff11ff00ff";
+
+  integer i, length, a;
+  byte c;
+
+  initial begin
+  length = s2.len();// String length
+  $display("the length of the string is=%d", length);
+
+  s4.putc(0, "V");// Insert 
+  $display("to insert the 0 index element after=%s", s4);
+
+  c = s2.getc(0);// Get the index 0
+  $display("first character of s2 is: %s", c);
+
+  s1 = s1.toupper();// Convert to uppercase
+  $display("to display all elements in uppercase: %s", s1);
+  
+  s4 = s4.tolower();// Convert to lowercase
+  $display("to display all elements in lowercase: %s", s4);
+
+  i = s5.atoi(); // String to integer 
+  $display("alphabet to integer conversion=%d", i);
+
+  s3 = s2.toupper(); // Convert to uppercase 
+  $display("to display all elements in uppercase: %s", s3);
+
+  a = s6.atohex();// Hex to integer
+  $display("%h", a);
+  end
+endmodule
+
+run
+# the length of the string is=         42
+# to insert the 0 index element after=VLSI
+# first character of s2 is: s
+# to display all elements in uppercase: SWETHASANKAR
+# to display all elements in lowercase: vlsi
+# alphabet to integer conversion=         12    //Stops conversion after non-numeric or alphabets ('A')
+# to display all elements in uppercase: SWELCOME TO DESIGN $ VERIFICATION ENGINEER
+# 11ff00ff
