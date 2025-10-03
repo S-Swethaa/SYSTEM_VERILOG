@@ -1,0 +1,21 @@
+module ex_union;////UNION_EXAMPLE
+typedef union packed{
+logic [15:0]word;
+struct packed{
+logic[7:0]b1;
+logic [7:0]b2;
+}bytes;
+}word_t;
+
+word_t a;
+initial begin
+a=16'hB5A0;
+$display("word=%h",a);
+$display("b1=%h,b2=%h",a.bytes.b1,a.bytes.b2);
+end
+endmodule
+
+O/P:
+run
+# word=b5a0
+# b1=b5,b2=a0
