@@ -1,0 +1,37 @@
+     
+module palindrome;
+
+function automatic bit is_palindrome(input int num);
+int ori_num,rev,digit;
+begin
+ori_num=num;
+rev=0;
+while(num>0)begin
+digit=num%10;
+rev=rev*10+digit;
+num=num/10;
+end
+
+is_palindrome=(ori_num==rev);
+end
+endfunction
+
+int test_numbers[5]='{121,12321,1234321,45654,81};
+bit res;
+
+initial begin
+foreach(test_numbers[i])begin
+res=is_palindrome(test_numbers[i]);
+$display("Number %0d is palindrome? %0b", test_numbers[i], res);
+ end
+ $finish;
+end
+
+endmodule
+
+o/p:
+# string madam is plaindrome=1
+# string radar is plaindrome=1
+# string level is plaindrome=1
+# string grammarg is plaindrome=1
+# string vlsi is plaindrome=0
