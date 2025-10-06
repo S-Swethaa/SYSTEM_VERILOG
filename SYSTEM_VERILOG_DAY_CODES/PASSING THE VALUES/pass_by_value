@@ -1,0 +1,18 @@
+module pass_by_value;
+int a,b,y;
+
+task passing_values(input int a,b,output int y);
+y=a*b;
+endtask
+
+initial begin
+passing_values(2,8,y);
+$display("y=%0d",y);
+end
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.pass_by_value(fast)
+run
+# y=16
