@@ -1,0 +1,19 @@
+module default_arguments;
+int a,b,y;
+
+task pass_by_value_task(input int a,b=4,output int y);
+y=a*b;
+endtask
+
+initial begin
+pass_by_value_task(2,,y);//default b=4( beforely declared b=4,just give the space for b).
+$display("y=%0d",y);
+end
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.default_arguments(fast)
+run
+# y=8
+
