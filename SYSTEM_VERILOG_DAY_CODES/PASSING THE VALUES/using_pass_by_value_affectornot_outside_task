@@ -1,0 +1,14 @@
+module using_pass_by_value_affectornot_outside_task;
+int a=7;
+int b=8;
+
+task apassing_the_value(int a,b);
+a=a+b;
+$display("the value of a,b is inside the task is %0d,%0d",a,b);
+endtask
+
+initial begin
+apassing_the_value(a,b);
+$display("the value of a,b is outside the task is %0d,%0d",a,b);
+end
+endmodule
