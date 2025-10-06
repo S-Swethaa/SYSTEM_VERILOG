@@ -1,0 +1,24 @@
+
+module pass_by_reference;
+int a=7;
+int b=8;
+
+task automatic passing_the_value_by_reference(ref int a,b);//ref keyword
+a=a+b;
+$display("the value of x,y is inside the task is %0d,%0d",a,b);
+endtask
+
+initial begin
+a=0;
+b=2;
+passing_the_value_by_reference(a,b);
+$display("the value of x,y is outside the task is %0d,%0d",a,b);
+end
+endmodule
+
+o/p:
+ Loading sv_std.std
+# Loading work.pass_by_reference(fast)
+run
+# the value of x,y is inside the task is 2,2//inside a,b will be reflected outside the task(global variable)using reference
+# the value of x,y is outside the task is 2,2
