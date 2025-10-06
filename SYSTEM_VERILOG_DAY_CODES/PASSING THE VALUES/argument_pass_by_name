@@ -1,0 +1,17 @@
+module argument_pass_by_name;
+int a,b,y;
+
+task pass_by_name(input int a,b,output int y);
+y=a*b;
+endtask
+
+initial begin
+pass_by_name(.a(2),.b(5),.y(y));
+$display("y=%0d",y);
+end
+endmodule
+
+O/P:
+
+run
+# y=10
