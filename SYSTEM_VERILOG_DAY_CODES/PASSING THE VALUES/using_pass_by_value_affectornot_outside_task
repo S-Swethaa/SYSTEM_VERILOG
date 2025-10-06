@@ -12,3 +12,10 @@ apassing_the_value(a,b);
 $display("the value of a,b is outside the task is %0d,%0d",a,b);
 end
 endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.using_pass_by_value_affectornot_outside_task(fast)
+run
+# the value of a,b is inside the task is 15,8
+# the value of a,b is outside the task is 7,8
