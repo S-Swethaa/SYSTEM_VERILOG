@@ -1,0 +1,25 @@
+// the task cannot modify the variable. It can read it, but not write to it.
+
+module task_using_const_ref;
+int a,b;
+int y;
+
+task automatic by_value(const ref int a,b,output int y);
+y=a**b;
+$display("the values of inside the task a=%0d,b=%0d,y=%0d",a,b,y);
+endtask
+
+initial begin
+a=5;
+b=7;
+by_value(a,b,y);
+$display("out:the values of a=%0d,b=%0d,y=%0d",a,b,y);
+end
+endmodule
+
+ Loading sv_std.std
+# Loading work.task_using_const_ref(fast)
+run
+# the values of inside the task a=5,b=7,y=78125
+# out:the values of a=5,b=7,y=78125
+-----------------------------------------------------------------------------------------
