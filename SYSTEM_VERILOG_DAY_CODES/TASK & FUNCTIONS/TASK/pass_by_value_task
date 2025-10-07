@@ -1,0 +1,22 @@
+module pass_by_value_task;
+int a,b;
+int y;
+
+task by_value(input int a,input int b,output int y);
+a=a*b;
+y=a;
+$display("the values of inside the task a=%0d,b=%0d,y=%0d",a,b,y);
+endtask
+
+initial begin
+by_value(5,7,y);
+$display("out:the values of a=%0d,b=%0d,y=%0d",a,b,y);
+end
+endmodule
+
+o/p:
+# Loading sv_std.std
+# Loading work.pass_by_value_task(fast)
+run
+# the values of inside the task a=35,b=7,y=35
+# out:the values of a=0,b=0,y=35   //global variable
