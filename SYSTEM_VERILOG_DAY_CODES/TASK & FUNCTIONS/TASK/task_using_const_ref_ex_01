@@ -1,0 +1,31 @@
+//the task cannot modify the variable. It can read it, but not write to it.
+
+module task_using_const_ref;
+typedef struct {
+string name;
+int id;
+bit res;
+}stu_det;
+
+  stu_det s;
+  bit pass_fail;
+
+  task automatic display_res(const ref stu_det s, output bit pass_fail);
+  pass_fail = s.res;
+  $display("Inside task: id=%0d, name=%s, res=%0b", s.id, s.name, s.res);
+  endtask
+
+  initial begin
+  s = '{id:7, name:"swetha", res:1'b1};
+  display_res(s, pass_fail);
+  $display("Outside task: pass_fail=%0b", pass_fail);
+  end
+
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.task_using_const_ref(fast)
+run
+# Inside task: id=7, name=swetha, res=1
+# Outside task: pass_fail=1
