@@ -1,0 +1,27 @@
+module automatic_task;
+
+task automatic task_auto_increment( );
+static int a;
+automatic int b;
+int c;
+
+a++;
+b++;
+c++;
+$display("a=%0d,b=%0d,c=%0d",a,b,c);
+endtask
+
+initial begin
+$display("AUTOMATIC TASK");
+task_auto_increment();
+task_auto_increment();
+task_auto_increment();
+end
+endmodule
+
+o/p:
+run
+# AUTOMATIC TASK
+# a=1,b=1,c=1
+# a=2,b=1,c=1
+# a=3,b=1,c=1
