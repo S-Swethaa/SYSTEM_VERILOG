@@ -2,7 +2,7 @@
   int a,b;
   int y;
 //a and b must be automatic
-  task without_using_automatic(ref int a, b, output int y);
+  task without_using_automatic(ref int a, b, output int y);//include automatic keyword-remove error
   a=a*b;//static
   y=a;
   endtask
