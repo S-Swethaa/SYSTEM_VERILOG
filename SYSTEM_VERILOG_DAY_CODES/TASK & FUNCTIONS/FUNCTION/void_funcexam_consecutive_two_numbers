@@ -1,0 +1,25 @@
+module void_ex_consecutive_two_numbers;
+
+function void chk_consecutive(int a,int b);
+if(b==a+1)begin
+$display("a=%0d and b=%0d are consecutive",a,b);
+end else begin
+$display("a=%0d and b=%0d are not consecutive",a,b);
+end
+endfunction
+
+initial begin
+int x=5;
+int y=6;
+chk_consecutive(x,y);
+chk_consecutive(12,16);
+//$display("a=%0d,b=%0d",x,y);
+end
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.void_ex_consecutive_two_numbers(fast)
+run
+# a=5 and b=6 are consecutive
+# a=12 and b=16 are not consecutive
