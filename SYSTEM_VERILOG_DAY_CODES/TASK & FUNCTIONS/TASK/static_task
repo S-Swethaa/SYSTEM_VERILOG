@@ -1,0 +1,29 @@
+module static_task;
+
+task static task_auto_increment( );
+static int a;
+automatic int b;
+int c;
+
+a++;
+b++;
+c++;
+$display("a=%0d,b=%0d,c=%0d",a,b,c);
+endtask
+
+initial begin
+$display("STATIC TASK");
+task_auto_increment();
+task_auto_increment();
+task_auto_increment();
+end
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.static_task(fast)
+run
+# STATIC TASK
+# a=1,b=1,c=1
+# a=2,b=1,c=2
+# a=3,b=1,c=3
