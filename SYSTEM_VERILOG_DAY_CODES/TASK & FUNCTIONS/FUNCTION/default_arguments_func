@@ -1,0 +1,27 @@
+module default_arguments;
+  int a, b;
+  int y;
+
+  function int default_arg(int a = 5, int b = 20);
+    a=a**2;
+    b=b**2;
+    return a+b;
+  $display("a=%0d,b=%0d,y=%0d",a,b,y);
+  endfunction
+
+  initial begin
+    y=default_arg(); // Uses default values:a=5,b=20
+    $display("Using defaults:y=%0d",y);
+
+    y=default_arg(4,3); // Overrides defaults:a=4,b=3 
+    $display("Using overrides:y=%0d",y);
+
+  end
+endmodule
+
+o/p:
+# Loading sv_std.std
+# Loading work.default_arguments(fast)
+run
+# Using defaults:y=425
+# Using overrides:y=25
