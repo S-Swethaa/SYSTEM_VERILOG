@@ -1,0 +1,35 @@
+module pass_by_value_func;
+
+function bit chk_consecutive(int a,int b);
+if(b==a+1)
+return 1;
+else
+return 0;
+endfunction
+
+initial begin
+int x=5;
+int y=6;
+
+bit res1=chk_consecutive(x,y);
+bit res2=chk_consecutive(12,16);
+//$display("a=%0d and b=%0d are not consecutive",x,y,!(y==x+1));
+//$display("a=%0d  b=%0d are not consecutive",x,y,(y==x+1));
+
+if(res1)
+$display("a=%0d and b=%0d are consecutive",x,y);
+else
+$display("a=%0d and b=%0d are not consecutive",x,y);
+if(res2)
+$display("12 and 16 are consecutive");
+else
+$display("12 and 16 are not consecutive");
+end
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.pass_by_value_func(fast)
+run
+# a=5 and b=6 are consecutive
+# 12 and 16 are not consecutive
