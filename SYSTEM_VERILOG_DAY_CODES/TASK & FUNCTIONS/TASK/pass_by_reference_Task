@@ -1,0 +1,24 @@
+module pass_by_reference;
+int a,b;
+int y;
+
+task automatic by_value(ref int a,b,output int y);
+a=a*b;
+y=a;
+$display("the values of inside the task a=%0d,b=%0d,y=%0d",a,b,y);
+endtask
+
+initial begin
+a=5;
+b=7;
+by_value(a,b,y);
+$display("out:the values of a=%0d,b=%0d,y=%0d",a,b,y);
+end
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.pass_by_reference(fast)
+run
+# the values of inside the task a=35,b=7,y=35
+# out:the values of a=35,b=7,y=35
