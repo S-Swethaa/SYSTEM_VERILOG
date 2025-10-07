@@ -1,0 +1,24 @@
+  module with_static_task;
+  int a,b;
+  int y;
+//a and b must be automatic
+  task without_using_automatic(ref int a, b, output int y);
+  a=a*b;//static
+  y=a;
+  endtask
+  
+  initial begin
+  a=7;
+  b=8;
+ 
+  without_using_automatic(a,b,y);
+  $display("Task_with_static:out=%0d,a=%0d,b=%0d",y,a,b);
+  end
+  endmodule
+
+o/p:
+error:vlog -work work -vopt -sv -stats=none C:/Users/praka/AppData/Local/quartus/with_static_task.sv
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling module with_static_task
+** Error (suppressible): C:/Users/praka/AppData/Local/quartus/with_static_task.sv(5): (vlog-13300) The task or function 'without_using_automatic' with ref argument 'a' must be automatic.
+** Error (suppressible): C:/Users/praka/AppData/Local/quartus/with_static_task.sv(5): (vlog-13300) The task or function 'without_using_automatic' with ref argument 'b' must be automatic.
