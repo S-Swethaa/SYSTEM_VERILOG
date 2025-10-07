@@ -1,0 +1,23 @@
+module values_passby_ref;
+  int a, b;
+  int y;
+
+  function automatic int default_arg(ref int a,b );
+    a=a**2;
+    b=b**2;
+    return a+b;
+  endfunction
+
+  initial begin
+  a=5;
+  b=6;
+  y=default_arg(a,b); 
+  $display("Using automatic functions a=%0d,b=%0d:y=%0d",a,b,y);
+  end
+endmodule
+
+o/p:
+# Loading sv_std.std
+# Loading work.default_arguments(fast)
+run
+# Using automatic functions a=25,b=36:y=61
