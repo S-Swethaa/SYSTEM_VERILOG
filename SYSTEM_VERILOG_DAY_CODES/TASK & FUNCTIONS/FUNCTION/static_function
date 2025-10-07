@@ -1,0 +1,29 @@
+module static_function;
+
+function static func_auto_increment( );
+static int a;
+automatic int b;
+int c;
+
+a++;
+b++;
+c++;
+$display("a=%0d,b=%0d,c=%0d",a,b,c);
+endfunction
+
+initial begin
+$display("STATIC_FUNCTION");
+func_auto_increment();
+func_auto_increment();
+func_auto_increment();
+end
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.static_function(fast)
+run
+# STATIC_FUNCTION
+# a=1,b=1,c=1
+# a=2,b=1,c=2
+# a=3,b=1,c=3
