@@ -16,7 +16,7 @@ endmodule
 
 o/p:
 Loading sv_std.std
-# Loading work.pass_by_value_task(fast)
+# Loading work.default_task(fast)
 run
 # the values of inside the task a=35,b=7,y=35
 # out:the values of a=0,b=0,y=35
