@@ -1,0 +1,58 @@
+class using_this_keyword;
+bit [31:0] data;
+int addr;
+
+function static  assign_val(bit [31:0] data,int addr);  //function static
+this.addr=addr;
+this.data=data;
+endfunction
+endclass
+
+module thiskeyword;
+initial begin
+using_this_keyword tk;
+tk=new();
+tk.assign_val(52,4);
+$display("addr=%0d,data=%0d",tk.addr,tk.data);
+end
+endmodule
+
+o/p:
+ Loading sv_std.std
+# Loading work.this_keyword_sv_unit(fast)
+# Loading work.thiskeyword(fast)
+run
+# addr=4,data=52
+
+//------------------------------------------------------------------------------
+beforely mention static function: this keyword usage in the static method is illegal
+class using_this_keyword;
+bit [31:0] data;
+int addr;
+
+static function   assign_val(bit [31:0] data,int addr); //static function
+this.addr=addr;
+this.data=data;
+endfunction
+endclass
+
+module thiskeyword;
+initial begin
+using_this_keyword tk;
+tk=new();
+tk.assign_val(52,4);
+$display("addr=%0d,data=%0d",tk.addr,tk.data);
+end
+endmodule
+
+o/p:
+vlog -work work -vopt -sv -stats=none C:/Users/praka/AppData/Local/quartus/this_keyword.sv
+Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+-- Compiling package this_keyword_sv_unit
+** Error: (vlog-13245) C:/Users/praka/AppData/Local/quartus/this_keyword.sv(6): Unresolved reference to 'this'.
+** Error: (vlog-13245) C:/Users/praka/AppData/Local/quartus/this_keyword.sv(7): Unresolved reference to 'this'.
+-- Compiling module thiskeyword
+** Error: (vlog-13069) C:/Users/praka/AppData/Local/quartus/this_keyword.sv(13): near ";": syntax error, unexpected ';', expecting '('.
+** Error: C:/Users/praka/AppData/Local/quartus/this_keyword.sv(14): (vlog-2730) Undefined variable: 'tk'.
+
+
