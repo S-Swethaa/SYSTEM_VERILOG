@@ -1,0 +1,26 @@
+//by default this keyword is automatic
+
+class using_this_keyword;
+bit [31:0] data;
+int addr;
+
+function new(bit [31:0] data,int addr);
+this.data=data;  //this .data&this.addr current class instance or class properties
+this.addr=addr;//data&addr are function arguments
+endfunction
+endclass
+
+module thiskeyword;
+initial begin
+using_this_keyword tk;
+tk=new(52,4);
+$display("addr=%0d,data=%0d",tk.addr,tk.data);
+end
+endmodule
+
+O/P:
+ Loading sv_std.std
+# Loading work.this_keyword_sv_unit(fast)
+# Loading work.thiskeyword(fast)
+run
+# addr=4,data=52
