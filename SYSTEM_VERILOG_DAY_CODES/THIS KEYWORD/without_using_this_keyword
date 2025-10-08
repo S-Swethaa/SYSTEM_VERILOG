@@ -1,0 +1,25 @@
+//without_using_this_keyword data and addr are 0 bcoz it confused which is class properties and fn arguments
+class without_using_this_keyword;
+bit [31:0] data;
+int addr;
+
+function  new(bit [31:0] data,int addr);
+data=data;
+addr=addr;
+endfunction
+endclass
+
+module thiskeyword;
+initial begin
+without_using_this_keyword tk;
+tk=new(52,4);
+$display("addr=%0d,data=%0d",tk.addr,tk.data);
+end
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.this_keyword_sv_unit(fast)
+# Loading work.thiskeyword(fast)
+run
+# addr=0,data=0
