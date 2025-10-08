@@ -1,3 +1,4 @@
+//in class using array to crate a object
 class facto_rial;
 int a;
 int res_fac;
