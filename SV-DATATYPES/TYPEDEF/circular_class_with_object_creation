@@ -1,0 +1,42 @@
+typedef class student;
+typedef class course;
+
+class student;
+string name;
+course enrolled_course;
+
+function void enroll(course c);
+enrolled_course=c;
+$display("enrolled course = %s for student %s", c.course_name, name);
+endfunction
+endclass
+
+class course;
+string course_name;
+student enrolled_student;
+
+function void register(student s);
+enrolled_student=s;
+$display("Course %s registered student %s", course_name, s.name);
+endfunction
+endclass
+
+module circular_class;
+initial begin
+student s=new;
+course c=new;
+
+s.name="SWETHA";
+c.course_name="JUNIOR DV ENG";
+
+s.enroll(c);
+c.register(s);
+end
+endmodule
+o/p:
+# Loading sv_std.std
+# Loading work.enum_to_integer_conversion_sv_unit(fast)
+# Loading work.circular_class(fast)
+run
+# enrolled course = JUNIOR DV ENG for student SWETHA
+# Course JUNIOR DV ENG registered student SWETHA
