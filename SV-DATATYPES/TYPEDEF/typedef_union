@@ -1,0 +1,41 @@
+module typedef_union;
+typedef union{
+logic [31:0]data;
+struct packed{
+logic [15:0]low;
+logic [15:0]high;
+}half;
+struct packed{
+logic [7:0]b1;
+logic [7:0]b2;
+logic [7:0]b3;
+logic [7:0]b4;
+}bytes;
+}ty_un_ex;
+
+ty_un_ex a;
+initial begin
+a.data=32'hAABBCCDD;
+$display("a.data=%0h",a.data);
+$display("low=%0h",a.half.low);
+$display("high=%0h",a.half.high);
+$display("b1=%0h",a.bytes.b1);
+$display("b2=%0h",a.bytes.b2);
+$display("b3=%0h",a.bytes.b3);
+$display("b4=%0h",a.bytes.b4);
+end
+endmodule
+
+o/p:
+# Loading sv_std.std
+# Loading work.typedef_union(fast)
+run
+# a.data=aabbccdd
+# low=aabb
+# high=ccdd
+# b1=aa
+# b2=bb
+# b3=cc
+# b4=dd
+
+
