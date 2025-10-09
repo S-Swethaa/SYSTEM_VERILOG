@@ -1,0 +1,27 @@
+module typedef_struct;
+typedef struct{
+int addr;
+int data;
+bit parity;
+}det;
+
+det d1,d2;
+initial begin
+d1.addr=47;
+d1.data=12;
+d1.parity=1;
+
+d2.addr=12;
+d2.addr=45;
+d2.parity=0;
+
+$display("addr=%0d,data=%0d,parity=%0b",d1.addr,d1.data,d1.parity);
+$display("addr=%0d,data=%0d,parity=%0b",d2.addr,d2.data,d2.parity);
+end
+endmodule
+o/p:
+# Loading sv_std.std
+# Loading work.typedef_struct(fast)
+run
+# addr=47,data=12,parity=1
+# addr=45,data=0,parity=0
