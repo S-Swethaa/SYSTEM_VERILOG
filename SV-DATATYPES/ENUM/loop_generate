@@ -1,0 +1,22 @@
+module loop_generate;
+typedef enum {idle,start,data_tr,parity,checking,stop}state_t;
+
+initial begin
+state_t st;
+int i;
+for(i=0;i<state_t'(stop);i++)begin
+st=state_t'(i);
+$display("the sates are=%s",st.name());
+end
+end
+endmodule
+
+o/p:
+Loading sv_std.std
+# Loading work.loop_generate(fast)
+run
+# the sates are=idle
+# the sates are=start
+# the sates are=data_tr
+# the sates are=parity
+# the sates are=checking
