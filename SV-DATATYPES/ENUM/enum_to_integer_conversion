@@ -1,0 +1,21 @@
+module enum_to_integer_conversion;
+typedef enum{red=2'd0,yellow=2'd1,green=2'd2}color_t;
+
+initial begin
+color_t color;
+int color_val;
+
+color=green;
+color_val=color;
+$display("colour=%s",color.name());
+$display("colour_val=%0d",color_val);
+end
+endmodule
+
+
+o/p:
+ Loading sv_std.std
+# Loading work.enum_to_integer_conversion(fast)
+run
+# colour=green
+# colour_val=2
