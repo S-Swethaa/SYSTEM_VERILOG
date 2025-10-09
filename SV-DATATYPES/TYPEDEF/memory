@@ -1,0 +1,19 @@
+module memory;
+typedef enum logic [1:0]{idle=2'd0,read=2'd2,write=2'd1}operation;
+
+initial begin
+operation opcode;
+opcode=write;
+case(opcode)
+idle:$display("state in idle");
+write:$display("performing to write in memory");
+read:$display("performing reading operation in memory");
+endcase
+end
+endmodule
+
+o/p:
+ Loading sv_std.std
+# Loading work.memory(fast)
+run
+# performing to write in memory
