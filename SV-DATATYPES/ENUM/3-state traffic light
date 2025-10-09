@@ -1,0 +1,25 @@
+module enum_ex;
+enum{red , yellow,green}tr_light;
+
+initial begin
+tr_light=red;
+$display("the tr_light state is=%s",tr_light.name);
+tr_light=yellow;
+$display("the tr_light state is=%s",tr_light.name);
+tr_light=green;
+$display("the tr_light state is=%s",tr_light.name);
+tr_light=red;
+$display("the tr_light state is=%s",tr_light.name);
+//tr_light=orange;
+//$display("the tr_light state is=%s",tr_light.name);
+end
+endmodule
+
+O/P:
+# Loading sv_std.std
+# Loading work.enum_ex(fast)
+run
+# the tr_light state is=red
+# the tr_light state is=yellow
+# the tr_light state is=green
+# the tr_light state is=red
