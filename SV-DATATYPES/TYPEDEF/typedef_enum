@@ -1,0 +1,29 @@
+module typedef_enum;
+typedef enum logic [1:0]{add=2'd0,sub=2'd1,mul=2'd2,div=2'd3}arithmetic_op;
+
+int a=$urandom;
+int b=$urandom;
+int res;
+
+initial begin
+arithmetic_op op_select;
+op_select=mul;
+case(op_select)
+add:res=a+b;
+sub:res=a-b;
+mul:res=a*b;
+div:res=a/b;
+default:res=0;
+endcase
+$display("a=%0d,b=%0d,op_select=%0d,res=%0d",a,b,op_select.name(),res);
+end
+endmodule
+
+o/p:
+//b is neg,we assigning it to a signed int.
+//If the random value is above 2^31, the sign bit becomes 1, making b negative.
+
+Loading sv_std.std
+# Loading work.typedef_enum(fast)
+run
+# a=1708117286,b=-1647067096,op_select=mul,res=648449520 
