@@ -5,6 +5,7 @@ logic sum,carry;
 clocking cb @(posedge clk);
 input a,b,c;
 output sum,carry;
+endclocking
 //modport dut_mp(input a,b,c,output sum,carry);
 endinterface
 
