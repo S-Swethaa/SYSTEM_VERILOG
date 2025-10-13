@@ -1,0 +1,44 @@
+interface fa;
+logic a,b,c;
+logic sum,carry;
+endinterface
+
+module full_adder(fa m);
+assign m.sum=m.a^m.b^m.c;
+assign m.carry=(m.a&m.b) | (m.b&m.c) | (m.c&m.a);
+endmodule
+
+module full_adder_tb();
+ fa m();                  // Instantiate the interface
+ full_adder dut(.m(m));// named port
+initial begin
+m.a=0;m.b=0;m.c=0; #1;
+$display("a=%0b b=%0b c=%0b ,out:sum=%0b carry=%0b", m.a, m.b, m.c, m.sum, m.carry);
+
+m.a=0;m.b=0;m.c=1; #1;
+$display("a=%0b b=%0b c=%0b ,out:sum=%0b carry=%0b", m.a, m.b, m.c, m.sum, m.carry);
+
+m.a=0;m.b=1;m.c=1; #1;
+$display("a=%0b b=%0b c=%0b ,out:sum=%0b carry=%0b", m.a, m.b, m.c, m.sum, m.carry);
+
+m.a=1;m.b=1;m.c=0; #1;
+$display("a=%0b b=%0b c=%0b ,out:sum=%0b carry=%0b", m.a, m.b, m.c, m.sum, m.carry);
+
+m.a=1;m.b=1;m.c=1; #1;
+$display("a=%0b b=%0b c=%0b ,out:sum=%0b carry=%0b", m.a, m.b, m.c, m.sum, m.carry);
+end
+endmodule
+
+
+
+o/p:
+# Loading sv_std.std
+# Loading work.fa
+# Loading work.full_adder
+# Loading work.full_adder_tb
+run
+# a=0 b=0 c=0 ,out:sum=0 carry=0
+# a=0 b=0 c=1 ,out:sum=1 carry=0
+# a=0 b=1 c=1 ,out:sum=0 carry=1
+# a=1 b=1 c=0 ,out:sum=0 carry=1
+# a=1 b=1 c=1 ,out:sum=1 carry=1
