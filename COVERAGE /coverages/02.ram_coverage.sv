@@ -1,3 +1,4 @@
+// Write a covergroup that tracks read_en and write_en signal combinations.
 module ram(
   input clk,rst,w,r,
   input [7:0]addr,datain,
